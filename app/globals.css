@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.h1 {
+  @apply text-3xl font-semibold;
+}
+
+.h2 {
+  @apply text-2xl font-semibold;
+}
+
+.h3 {
+  @apply text-xl font-semibold;
+}
+
+.h4 {
+  @apply text-lg font-semibold;
+}
+
+
+@layer components {
+  .typing {
+    @apply flex items-center gap-1.5 h-6
+  }
+  .typing__dot {
+    @apply w-2 h-2 bg-secondary/40 rounded-full animate-[updown_linear_0.8s_infinite] relative
+  }
+
+  .typing__dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .typing__dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing__dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes updown {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-0.4rem);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
